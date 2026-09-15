@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Premarital Assessment: Dating Towards Marriage</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f4f9',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#334e68',
+                            800: '#243b53',
+                            900: '#102a43',
+                            950: '#0b1d30',
+                        },
+                        gold: {
+                            400: '#f6c065',
+                            500: '#e1a140',
+                            600: '#c2822a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { background: white; color: black; }
+            .page-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-navy-700 selection:text-white min-h-screen flex flex-col">
+
+    <!-- Top Header -->
+    <header class="sticky top-0 z-50 bg-navy-900 text-white shadow-xl no-print border-b border-navy-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-gold-500 to-navy-500 flex items-center justify-center text-white shadow-lg">
+                        <i class="fa-solid fa-rings-wedding text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-serif font-bold text-lg sm:text-xl text-slate-100 tracking-wide">Premarital Assessment</h1>
+                        <p class="text-xs text-navy-200">Dating with a Vision for Marriage</p>
+                    </div>
+                </div>
+
+                <!-- Global Progress Bar -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <div class="text-right">
+                        <div class="text-xs text-navy-300 font-medium uppercase tracking-wider">Completion Progress</div>
+                        <div class="text-sm font-bold text-gold-400" id="header-progress-text">0 of 97 Answered (0%)</div>
+                    </div>
+                    <div class="w-36 bg-navy-950 rounded-full h-3 p-0.5 border border-navy-700 overflow-hidden">
+                        <div id="header-progress-bar" class="bg-gradient-to-r from-blue-400 to-gold-400 h-full rounded-full transition-all duration-500 w-0"></div>
+                    </div>
+                    <button onclick="scrollToResults()" class="bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold px-4 py-2 rounded-lg text-sm transition-all shadow-md flex items-center space-x-2">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Results</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="relative bg-navy-950 text-white overflow-hidden border-b border-navy-800">
+        <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-900/90 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+            <div class="max-w-3xl">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-navy-800 text-gold-400 border border-gold-500/30 mb-4">
+                    <i class="fa-solid fa-book-bible mr-1.5"></i> Comprehensive Couple Evaluation
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
+                    Building a Strong Future Founded on Love and Faith
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg mb-6 leading-relaxed">
+                    This instrument is designed to thoughtfully and honestly evaluate ten foundational pillars of your relationship. Respond with prayerful discernment and authenticity.
+                </p>
+
+                <!-- Respondent Profile Card -->
+                <div class="bg-navy-900/80 border border-navy-700/60 rounded-xl p-5 backdrop-blur-md shadow-lg">
+                    <h3 class="text-gold-400 font-semibold text-sm uppercase tracking-wider mb-3 flex items-center">
+                        <i class="fa-solid fa-circle-info mr-2"></i> Key Instructions
+                    </h3>
+                    <ul class="text-xs sm:text-sm text-slate-300 space-y-2 mb-4">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 mt-1 mr-2 text-xs"></i> Complete this individually without consulting each other to ensure sincere answers.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 mt-1 mr-2 text-xs"></i> Scoring scale: <strong>Yes = 2 points</strong> | <strong>Sometimes = 1 point</strong> | <strong>No = 0 points</strong></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 mt-1 mr-2 text-xs"></i> Once finished, compare your results, analyze the summary table, and build your joint action plan.</li>
+                    </ul>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-navy-800">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Respondent Name:</label>
+                            <input type="text" id="evaluator-name" placeholder="e.g., Emily / Michael" class="w-full bg-navy-950 border border-navy-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-400 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Partner's Name:</label>
+                            <input type="text" id="partner-name" placeholder="e.g., David / Sarah" class="w-full bg-navy-950 border border-navy-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-400 transition-colors">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Tabs for Sections -->
+    <div class="bg-white border-b border-slate-200 sticky top-20 z-40 shadow-sm no-print overflow-x-auto">
+        <div class="max-w-7xl mx-auto px-4 flex space-x-1 py-3" id="section-nav-bar">
+            <!-- Navigation buttons populated dynamically -->
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+        <!-- Survey Sections Container -->
+        <div id="survey-container" class="space-y-12">
+            <!-- Dynamic survey cards generated by JS -->
+        </div>
+
+        <!-- Results Dashboard Section -->
+        <section id="results-section" class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8 scroll-mt-36">
+            <div class="border-b border-slate-200 pb-6 mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-navy-600">Executive Summary</span>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-navy-900">Overall Scoreboard & Analysis</h2>
+                    <p class="text-slate-500 text-sm mt-1">Quantitative evaluation metrics across all ten relational pillars.</p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button onclick="window.print()" class="bg-navy-800 hover:bg-navy-900 text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors shadow flex items-center space-x-2">
+                        <i class="fa-solid fa-print"></i>
+                        <span>Print / Save as PDF</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Total Score Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-navy-900 to-navy-950 rounded-2xl p-6 text-white flex flex-col justify-between shadow-lg relative overflow-hidden">
+                    <div class="absolute right-0 bottom-0 opacity-10 text-9xl transform translate-x-4 translate-y-4">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-medium uppercase tracking-wider text-navy-300">Cumulative Overall Score</span>
+                        <div class="text-4xl sm:text-5xl font-extrabold text-gold-400 my-3" id="total-score-num">0 <span class="text-xl font-normal text-slate-300">/ 194</span></div>
+                        <div class="text-sm text-navy-200" id="total-percentage-text">Overall Percentage: 0%</div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-navy-800/80">
+                        <span id="total-badge" class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-navy-800 text-slate-300">
+                            Awaiting Answers
+                        </span>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-base font-bold text-navy-900 mb-2 flex items-center">
+                            <i class="fa-solid fa-scale-balanced text-navy-600 mr-2"></i> Interpretation Scale
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-4">
+                            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs font-bold text-emerald-800">80% – 100%</span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                </div>
+                                <div class="text-xs font-semibold text-emerald-900">Strong Area</div>
+                                <p class="text-[11px] text-emerald-700 mt-1">Celebrate, cultivate, and maintain what is working well.</p>
+                            </div>
+
+                            <div class="bg-amber-50 border border-amber-200 rounded-xl p-3">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs font-bold text-amber-800">60% – 79%</span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                                </div>
+                                <div class="text-xs font-semibold text-amber-900">Growing Area</div>
+                                <p class="text-[11px] text-amber-700 mt-1">Set clear, tangible goals to strengthen this dimension.</p>
+                            </div>
+
+                            <div class="bg-rose-50 border border-rose-200 rounded-xl p-3">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs font-bold text-rose-800">&lt; 60%</span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                                </div>
+                                <div class="text-xs font-semibold text-rose-900">Priority Attention</div>
+                                <p class="text-[11px] text-rose-700 mt-1">Requires deep dialogue, mentorship, or premarital pastoral counseling.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 italic">
+                        * Note: Results reflect honest self-assessment. The goal is never criticism, but building relational wisdom and intimacy prior to marriage.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Detailed Section Results Table -->
+            <div class="overflow-x-auto rounded-xl border border-slate-200">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-navy-900 text-white text-xs uppercase tracking-wider">
+                        <tr>
+                            <th class="py-3.5 px-4">Section Dimension</th>
+                            <th class="py-3.5 px-4 text-center">Score Obtained</th>
+                            <th class="py-3.5 px-4 text-center">Maximum Score</th>
+                            <th class="py-3.5 px-4 text-center">Percentage</th>
+                            <th class="py-3.5 px-4 text-center">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scores-table-body" class="divide-y divide-slate-200 bg-white">
+                        <!-- Dynamic rows built via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Interactive Action Plan Section -->
+        <section id="action-plan-section" class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8">
+            <div class="border-b border-slate-200 pb-6 mb-8">
+                <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Continuous Growth</span>
+                <h2 class="text-2xl sm:text-3xl font-serif font-bold text-navy-900">SMART Action Plan by Area</h2>
+                <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                    For any section with a score under 60%, formulate an actionable improvement plan. Focus on 2 to 3 key priorities to maintain sustainable progress.
+                </p>
+            </div>
+
+            <div id="action-plan-container" class="space-y-8">
+                <!-- Action plan forms populated dynamically -->
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section id="recommendations-section" class="bg-navy-900 text-white rounded-2xl shadow-xl p-6 sm:p-8">
+            <div class="border-b border-navy-700 pb-6 mb-8">
+                <span class="text-xs font-bold uppercase tracking-widest text-gold-400">Growth Blueprint</span>
+                <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white">Practical Guidance by Pillar</h2>
+                <p class="text-navy-200 text-sm mt-2">
+                    Biblical principles and practical tools to apply when a specific dimension requires intentional nurturing.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="recommendations-grid">
+                <!-- Dynamic recommendation cards -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 text-navy-300 py-8 border-t border-navy-800 no-print mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
+            <div class="flex items-center justify-center space-x-2 text-gold-400">
+                <i class="fa-solid fa-cross"></i>
+                <span class="font-serif font-bold text-white">Comprehensive Premarital Assessment & Roadmap</span>
+            </div>
+            <p class="text-xs text-navy-400">"Love is patient, love is kind..." — 1 Corinthians 13:4</p>
+            <p class="text-xs text-navy-500">Designed with purpose and elegance to empower marital readiness and family legacy.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Full Survey Data Definition in English
+        const surveyData = [
+            {
+                id: 'A',
+                title: 'A. SPIRITUAL & MINISTRY LIFE',
+                maxScore: 24,
+                image: 'https://images.unsplash.com/photo-1509021436481-285627231454?auto=format&fit=crop&w=1000&q=80',
+                questions: [
+                    { id: 1, text: 'I maintain a consistent personal devotional life (prayer and Bible reading).' },
+                    { id: 2, text: 'My partner maintains a consistent personal devotional life.' },
+                    { id: 3, text: 'We share dedicated time for prayer and discuss what God speaks to us through Scripture as a couple.' },
+                    { id: 4, text: 'We have clarity concerning God’s calling for our personal lives and ministries.' },
+                    { id: 5, text: 'I wholeheartedly support and appreciate my partner’s calling and ministry.' },
+                    { id: 6, text: 'My partner supports and appreciates my calling and ministry.' },
+                    { id: 7, text: 'We have discussed how we will serve God together in our future marriage.' },
+                    { id: 8, text: 'God has confirmed to me through His Word and prayer that this is the right person.', openText: 'Which biblical passage or confirmation?' },
+                    { id: 9, text: 'God has confirmed to my partner through His Word and prayer that I am the right person.', openText: 'Which biblical passage or confirmation?' },
+                    { id: 10, text: 'My partner has a genuine passion for ministry or serving God.' },
+                    { id: 11, text: 'We are both actively involved in our local church or faith community.' },
+                    { id: 12, text: 'We agree on core doctrines and fundamental values of faith.', openText: 'Is there any doctrinal difference? If so, which?' }
+                ]
+            },
+            {
+                id: 'B',
+                title: 'B. BIBLICAL LOVE & RESPECT',
+                subtitle: '(Based on 1 Corinthians 13, Ephesians 5:21-33, 1 Peter 3:7)',
+                maxScore: 20,
+                image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1000&q=80',
+                questions: [
+                    { id: 13, text: 'I understand biblical love is patient, kind, does not envy, does not boast, is not proud, does not dishonor others, is not self-seeking, is not easily angered, keeps no record of wrongs (1 Cor 13).' },
+                    { id: 14, text: 'I demonstrate sacrificial love toward my partner, seeking their good above my own preferences.' },
+                    { id: 15, text: 'My partner respects and honors me consistently in both words and actions.' },
+                    { id: 16, text: 'I respect and honor my partner consistently in both words and actions.' },
+                    { id: 17, text: 'We practice mutual honor and respect both in public and in private.' },
+                    { id: 18, text: 'We deliberately avoid hurtful words, sarcasm, mocking, or contempt.' },
+                    { id: 19, text: 'We intentionally seek to build up rather than tear down with our speech.' },
+                    { id: 20, text: 'We understand this Word: the husband must love his wife as Christ loved the church, and the wife must respect her husband unconditionally (Eph 5:33).' },
+                    { id: 21, text: 'We treat each other with deep dignity as cherished children of God.' },
+                    { id: 22, text: 'We recognize that genuine love is not a fleeting feeling, but a daily covenant commitment.' }
+                ]
+            },
+            {
+                id: 'C',
+                title: 'C. SHARED VISION, GOALS & ACHIEVEMENTS',
+                maxScore: 20,
+                image: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1000&q=80',
+                questions: [
+                    { id: 23, text: 'We share the same overarching vision and mission for our future together in all areas.' },
+                    { id: 24, text: 'I celebrate and genuinely value my partner’s professional and personal achievements.' },
+                    { id: 25, text: 'My partner feels proud of and celebrates my achievements.' },
+                    { id: 26, text: 'We actively support each other in achieving personal and professional milestones.' },
+                    { id: 27, text: 'My partner has a productive job, career, or enterprise.' },
+                    { id: 28, text: 'I have a productive job, career, or enterprise.' },
+                    { id: 29, text: 'I contribute ideas and investments to build experiences and mutual projects.' },
+                    { id: 30, text: 'My partner contributes ideas and investments to build experiences and mutual projects.' },
+                    { id: 31, text: 'We have accomplished tangible goals as a couple (travel, savings, service, projects).' },
+                    { id: 32, text: 'We know how to set short-term and long-term milestones as a collaborative team.' }
+                ]
+            },
+            {
+                id: 'D',
+                title: 'D. COMMUNICATION & EMOTIONAL CONNECTION',
+                maxScore: 20,
+                image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80',
+                questions: [
+                    { id: 33, text: 'I truly enjoy spending extended time in conversation and presence with my partner.' },
+                    { id: 34, text: 'We have varied, engaging, and enriching topics of conversation.' },
+                    { id: 35, text: 'Conversations with my partner help me grow and stimulate my mind and spirit.' },
+                    { id: 36, text: 'I leave our times together feeling peaceful, uplifted, and emotionally fulfilled.' },
+                    { id: 37, text: 'I am sensitive and attentive to my partner’s emotional needs.' },
+                    { id: 38, text: 'My partner is sensitive and attentive to my emotional needs.' },
+                    { id: 39, text: 'We know how to resolve conflict equitably without shouting, insulting, or hostility.' },
+                    { id: 40, text: 'We practice active listening and validate each other’s feelings before responding.' },
+                    { id: 41, text: 'We readily apologize, ask for forgiveness, and extend grace easily.' },
+                    { id: 42, text: 'We can discuss difficult matters (money, intimacy, family) peacefully.', openText: 'Do we effectively reach closure and resolutions?' }
+                ]
+            },
+            {
+                id: 'E',
+                title: 'E. LOVE LANGUAGES & AFFECTION',
+                maxScore: 12,
+                image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1000&q=80',
+                hasLoveLanguagesSelector: true,
+                questions: [
+                    { id: 43, text: 'I have clearly identified my partner’s primary love language.' },
+                    { id: 44, text: 'I consistently communicate and express affection in my partner’s love language.' },
+                    { id: 45, text: 'I have clearly identified my own primary love language.' },
+                    { id: 46, text: 'My partner routinely practices my primary love language.' },
+                    { id: 47, text: 'Both of us feel cherished, deeply loved, and valued in the relationship.' },
+                    { id: 48, text: 'My partner knows how I best receive affection and makes an intentional effort to provide it.' }
+                ]
+            },
+            {
+                id: 'F',
+                title: 'F. HOUSEHOLD MANAGEMENT, FINANCES & PRACTICAL LIFE',
+                maxScore: 30,
+                image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1000&q=80',
+                questions: [
+                    { id: 49, text: 'I have full clarity regarding my financial status (income, debt, expenses, assets).' },
+                    { id: 50, text: 'My partner has full clarity regarding their financial status.' },
+                    { id: 51, text: 'We have talked openly and transparently about money, debts, and budgeting.' },
+                    { id: 52, text: 'We both contribute equitably to shared expenses according to our agreed arrangements.' },
+                    { id: 53, text: 'I am willing to contribute 50% (or our agreed equitable portion) to household expenses.' },
+                    { id: 54, text: 'My partner is willing to contribute 50% (or our agreed equitable portion) to household expenses.' },
+                    { id: 55, text: 'We have a clear framework for dividing household responsibilities (cooking, cleaning, chores, errands).' },
+                    { id: 56, text: 'My partner enjoys cooking or shows a genuine willingness to learn.' },
+                    { id: 57, text: 'I actively participate or show a genuine willingness to handle domestic responsibilities.' },
+                    { id: 58, text: 'My partner cares attentively about my physical health and well-being.' },
+                    { id: 59, text: 'I care attentively about my partner’s physical health and well-being.' },
+                    { id: 60, text: 'My partner takes an active interest in wholesome nutrition and healthy lifestyle.' },
+                    { id: 61, text: 'I take an active interest in wholesome nutrition and our daily wellness.' },
+                    { id: 62, text: 'My partner is gentle and kind in daily practical interactions.', openText: 'Which area needs improvement?' },
+                    { id: 63, text: 'I am gentle and kind in daily practical interactions.', openText: 'Which area do I need to improve?' }
+                ]
+            },
+            {
+                id: 'G',
+                title: 'G. FAMILY, EXTENDED RELATIONSHIPS & SOCIAL CIRCLE',
+                maxScore: 16,
+                image: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1000&q=80',
+                questions: [
+                    { id: 64, text: 'My parents hold a favorable and supportive opinion of my partner.' },
+                    { id: 65, text: 'My partner’s parents accept, welcome, and appreciate me.' },
+                    { id: 66, text: 'My siblings and closest friends approve of and support our relationship.' },
+                    { id: 67, text: 'We respect and maintain healthy boundaries with our families of origin.' },
+                    { id: 68, text: 'We know how to navigate family differences or tensions constructively.' },
+                    { id: 69, text: 'We are surrounded by healthy friendships that strengthen and protect our relationship.' },
+                    { id: 70, text: 'We genuinely enjoy spending time with each other’s families and friends.' },
+                    { id: 71, text: 'We strictly protect the privacy and unity of our relationship from third-party interference.' }
+                ]
+            },
+            {
+                id: 'H',
+                title: 'H. PERSONAL GROWTH, HOBBIES & LEISURE',
+                maxScore: 12,
+                image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80',
+                questions: [
+                    { id: 72, text: 'We have hobbies and recreational activities that we both enjoy doing together.' },
+                    { id: 73, text: 'We respect and celebrate each other’s individual time and independent passions.' },
+                    { id: 74, text: 'Both of us actively pursue personal growth (reading, workshops, mentoring, therapy).' },
+                    { id: 75, text: 'We regularly enjoy quality time completely free from screens and digital distractions.' },
+                    { id: 76, text: 'We have fun together, laugh often, and maintain a joyful dynamic.' },
+                    { id: 77, text: 'We know how to rest and manage stress without taking out frustrations on one another.' }
+                ]
+            },
+            {
+                id: 'I',
+                title: 'I. SEXUALITY, BOUNDARIES & PURITY',
+                subtitle: '(In dating, this evaluates boundaries, open communication, expectations and biblical purity, not sexual activity)',
+                maxScore: 20,
+                image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80',
+                questions: [
+                    { id: 78, text: 'We have openly discussed our expectations for marital sexual intimacy with reverence and maturity.' },
+                    { id: 79, text: 'We believe and honor that sexual intimacy is a sacred gift from God reserved exclusively for marriage.' },
+                    { id: 80, text: 'We maintain clear physical boundaries and sexual purity in accordance with biblical convictions.' },
+                    { id: 81, text: 'We have defined clear guidelines for what physical affection is appropriate during our dating period.' },
+                    { id: 82, text: 'We have proactive safeguards to avoid compromising situations (isolated places, late hours, trips, media).' },
+                    { id: 83, text: 'My partner honors and respects my physical and emotional boundaries.' },
+                    { id: 84, text: 'I honor and respect my partner’s physical and emotional boundaries.' },
+                    { id: 85, text: 'We feel completely free from emotional pressure, coercion, or sexual manipulation.' },
+                    { id: 86, text: 'We have sought or are fully open to seeking trusted mentorship or accountability regarding purity.' },
+                    { id: 87, text: 'We know genuine biblical love is not primarily sensual, but rooted in commitment, honor, and self-control.' }
+                ]
+            },
+            {
+                id: 'J',
+                title: 'J. PREPARATION FOR COMMITMENT & MARITAL ROADMAP',
+                maxScore: 20,
+                image: 'https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1000&q=80',
+                questions: [
+                    { id: 88, text: 'We have talked candidly about marriage and have an approximate timeline for formal engagement.' },
+                    { id: 89, text: 'We desire to have children and have discussed how many we hope to have.' },
+                    { id: 90, text: 'We are in agreement regarding the spiritual formation, discipline, and education of future children.' },
+                    { id: 91, text: 'We have thoroughly conversed about marital roles, mutual responsibilities, and expectations.' },
+                    { id: 92, text: 'We maintain integrity and steadfast physical boundaries leading up to our wedding day.' },
+                    { id: 93, text: 'We are eager to complete formal premarital counseling or pastoral mentorship before marrying.' },
+                    { id: 94, text: 'I can identify my own key areas of personal refinement to become an honorable spouse.' },
+                    { id: 95, text: 'I can clearly articulate the core strengths and anchors of our relationship.' },
+                    { id: 96, text: 'We have navigated through a significant trial or disagreement and emerged stronger together.', openText: 'What key lessons or changes did we adopt?' },
+                    { id: 97, text: 'Both of us are completely committed to working through growth areas before walking down the aisle.' }
+                ]
+            }
+        ];
+
+        const areaRecommendations = {
+            'A': {
+                title: 'Spiritual & Ministry Life',
+                icon: 'fa-bible',
+                tips: [
+                    'Establish a weekly couple devotional and prayer time (e.g., Sunday evenings).',
+                    'Read through a practical New Testament epistle together (such as Ephesians or James).',
+                    'Serve side-by-side in a church ministry or community outreach once a month.'
+                ]
+            },
+            'B': {
+                title: 'Biblical Love & Respect',
+                icon: 'fa-heart',
+                tips: [
+                    'Write down 10 specific ways each of you feels deeply loved and honored.',
+                    'Practice daily, genuine verbal affirmations and gratitude.',
+                    'Actively apply Ephesians 4:29 by choosing language that builds up and gives grace.'
+                ]
+            },
+            'C': {
+                title: 'Shared Vision & Goals',
+                icon: 'fa-compass',
+                tips: [
+                    'Create a visual timeline outlining your 1-year, 3-year, and 5-year milestones.',
+                    'Publicly and privately praise each other’s professional and personal wins.',
+                    'Commit to a shared savings or service project to practice joint stewardship.'
+                ]
+            },
+            'D': {
+                title: 'Communication & Emotional Connection',
+                icon: 'fa-comments',
+                tips: [
+                    'Schedule a distraction-free weekly date night with phones turned off.',
+                    'Utilize the "Speaker-Listener" technique: one speaks for 5 minutes, the other reflects and validates.',
+                    'Use "I feel..." statements rather than accusatory phrasing like "You always...".'
+                ]
+            },
+            'E': {
+                title: 'Love Languages & Affection',
+                icon: 'fa-gift',
+                tips: [
+                    'Take the official 5 Love Languages quiz together and discuss specific examples.',
+                    'Dedicate 15 days to speaking your partner’s primary love language daily.',
+                    'Do a weekly emotional check-in: "How full is your love tank right now?"'
+                ]
+            },
+            'F': {
+                title: 'Finances, Home & Practical Stewardship',
+                icon: 'fa-wallet',
+                tips: [
+                    'Draft a realistic household startup budget detailing projected living expenses.',
+                    'Disclose all debts, student loans, savings goals, and spending habits with total honesty.',
+                    'Agree on an equitable distribution of cooking, laundry, and house maintenance.'
+                ]
+            },
+            'G': {
+                title: 'Family & Social Circle',
+                icon: 'fa-users',
+                tips: [
+                    'Establish healthy boundaries with in-laws that safeguard couple autonomy and unity.',
+                    'Foster warm, respectful relationships with each other’s parents and siblings.',
+                    'Surround yourselves with thriving Christian marriages who can mentor you.'
+                ]
+            },
+            'H': {
+                title: 'Personal Growth & Leisure',
+                icon: 'fa-seedling',
+                tips: [
+                    'Cultivate at least one shared hobby (outdoor hiking, cooking, tennis, reading).',
+                    'Generously encourage your partner’s independent creative or sports passions.',
+                    'Invest in marital books, seminars, and resources that foster ongoing maturity.'
+                ]
+            },
+            'I': {
+                title: 'Sexuality, Boundaries & Purity',
+                icon: 'fa-shield-halved',
+                tips: [
+                    'Establish explicit, written physical boundaries before finding yourselves in private spaces.',
+                    'Enlist a trusted married couple or pastoral mentor for regular accountability.',
+                    'Read an approved Christian book on God’s theology of sex and marital intimacy.'
+                ]
+            },
+            'J': {
+                title: 'Preparation for Commitment',
+                icon: 'fa-ring',
+                tips: [
+                    'Enroll in formal pastoral premarital counseling at least 6 months before the wedding.',
+                    'Co-write a mission statement encapsulating the foundational values of your future home.',
+                    'Address unresolved survey friction points before announcing an engagement.'
+                ]
+            }
+        };
+
+        // State trackers
+        const userAnswers = {}; // questionId -> 0 | 1 | 2
+        const openAnswers = {}; // questionId -> string
+        let loveLanguagesData = { partner: '', mine: '' };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderSectionNav();
+            renderSurveySections();
+            renderRecommendationsGrid();
+            updateScores();
+        });
+
+        // Render Navigation Pills
+        function renderSectionNav() {
+            const navContainer = document.getElementById('section-nav-bar');
+            navContainer.innerHTML = '';
+
+            surveyData.forEach(section => {
+                const btn = document.createElement('button');
+                btn.className = `px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all border border-slate-200 text-slate-600 hover:bg-navy-50 hover:text-navy-900`;
+                btn.innerHTML = `<span class="font-bold mr-1 text-gold-600">${section.id}.</span> ${section.title.split('. ')[1] || section.title}`;
+                btn.onclick = () => {
+                    const el = document.getElementById(`section-block-${section.id}`);
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                };
+                navContainer.appendChild(btn);
+            });
+
+            // Results Shortcut Button
+            const resBtn = document.createElement('button');
+            resBtn.className = `px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all bg-gold-500 hover:bg-gold-600 text-navy-950 shadow-sm ml-2`;
+            resBtn.innerHTML = `<i class="fa-solid fa-chart-column mr-1"></i> View Results`;
+            resBtn.onclick = scrollToResults;
+            navContainer.appendChild(resBtn);
+        }
+
+        // Render All Survey Sections
+        function renderSurveySections() {
+            const container = document.getElementById('survey-container');
+            container.innerHTML = '';
+
+            surveyData.forEach(section => {
+                const sectionCard = document.createElement('section');
+                sectionCard.id = `section-block-${section.id}`;
+                sectionCard.className = `bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden transition-all duration-300`;
+
+                // Header with Image
+                sectionCard.innerHTML = `
+                    <div class="relative h-48 sm:h-56 bg-navy-900 text-white overflow-hidden">
+                        <img src="${section.image}" alt="${section.title}" class="w-full h-full object-cover opacity-35">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-900/60 to-transparent"></div>
+                        <div class="absolute bottom-0 inset-x-0 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                            <div>
+                                <span class="bg-gold-500 text-navy-950 font-extrabold text-xs px-2.5 py-1 rounded-md uppercase tracking-wider">
+                                    Section ${section.id}
+                                </span>
+                                <h3 class="text-xl sm:text-2xl font-serif font-bold text-white mt-2">${section.title}</h3>
+                                ${section.subtitle ? `<p class="text-xs text-slate-300 italic mt-0.5">${section.subtitle}</p>` : ''}
+                            </div>
+                            <div class="bg-navy-950/80 backdrop-blur border border-navy-700/80 px-4 py-2 rounded-xl text-right">
+                                <span class="text-[10px] uppercase font-bold text-navy-300 block">Section Score</span>
+                                <span id="section-score-${section.id}" class="text-lg font-extrabold text-gold-400">0 / ${section.maxScore}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 sm:p-8 space-y-6">
+                        <div id="questions-list-${section.id}" class="space-y-6"></div>
+                        ${section.hasLoveLanguagesSelector ? renderLoveLanguagesSectionHTML() : ''}
+                    </div>
+                `;
+
+                container.appendChild(sectionCard);
+
+                // Populate question items
+                const qList = document.getElementById(`questions-list-${section.id}`);
+                section.questions.forEach(q => {
+                    const qItem = document.createElement('div');
+                    qItem.className = `p-4 sm:p-5 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-slate-50 transition-colors space-y-3`;
+                    qItem.innerHTML = `
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="flex items-start space-x-3">
+                                <span class="w-7 h-7 rounded-full bg-navy-100 text-navy-800 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                                    ${q.id}
+                                </span>
+                                <p class="text-sm font-medium text-slate-800 leading-snug">${q.text}</p>
+                            </div>
+
+                            <!-- Option Buttons -->
+                            <div class="flex items-center space-x-1.5 shrink-0 self-end sm:self-auto">
+                                <button type="button" onclick="selectOption('${section.id}', ${q.id}, 2)" id="btn-q${q.id}-2" class="option-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 bg-white text-slate-700 hover:border-emerald-500 hover:text-emerald-700 transition-all">
+                                    <i class="fa-regular fa-circle-check mr-1"></i> Yes (2)
+                                </button>
+                                <button type="button" onclick="selectOption('${section.id}', ${q.id}, 1)" id="btn-q${q.id}-1" class="option-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 bg-white text-slate-700 hover:border-amber-500 hover:text-amber-700 transition-all">
+                                    <i class="fa-regular fa-circle-minus mr-1"></i> Sometimes (1)
+                                </button>
+                                <button type="button" onclick="selectOption('${section.id}', ${q.id}, 0)" id="btn-q${q.id}-0" class="option-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 bg-white text-slate-700 hover:border-rose-500 hover:text-rose-700 transition-all">
+                                    <i class="fa-regular fa-circle-xmark mr-1"></i> No (0)
+                                </button>
+                            </div>
+                        </div>
+
+                        ${q.openText ? `
+                            <div class="pt-2 pl-10">
+                                <label class="block text-xs font-medium text-navy-700 mb-1">${q.openText}</label>
+                                <input type="text" onchange="openAnswers[${q.id}] = this.value" placeholder="Specify your response..." class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs text-slate-800 focus:outline-none focus:border-navy-600">
+                            </div>
+                        ` : ''}
+                    `;
+                    qList.appendChild(qItem);
+                });
+            });
+        }
+
+        // Love Languages Selector for Section E
+        function renderLoveLanguagesSectionHTML() {
+            const languages = [
+                'Words of Affirmation',
+                'Quality Time',
+                'Receiving Gifts',
+                'Acts of Service',
+                'Physical Touch'
+            ];
+
+            return `
+                <div class="mt-8 pt-6 border-t border-slate-200 bg-navy-50/50 p-5 rounded-xl space-y-4">
+                    <h4 class="text-sm font-bold text-navy-900 flex items-center">
+                        <i class="fa-solid fa-heart-pulse text-gold-500 mr-2"></i> Primary Love Languages Identification
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Partner's Language -->
+                        <div>
+                            <label class="block text-xs font-semibold text-navy-800 mb-2">My Partner's Primary Love Language:</label>
+                            <div class="space-y-1.5">
+                                ${languages.map(lang => `
+                                    <label class="flex items-center space-x-2 text-xs text-slate-700 cursor-pointer bg-white p-2 rounded-lg border border-slate-200 hover:border-navy-400">
+                                        <input type="radio" name="lang-partner" value="${lang}" onchange="loveLanguagesData.partner = this.value" class="text-navy-700 focus:ring-navy-600">
+                                        <span>${lang}</span>
+                                    </label>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <!-- My Language -->
+                        <div>
+                            <label class="block text-xs font-semibold text-navy-800 mb-2">My Primary Love Language:</label>
+                            <div class="space-y-1.5">
+                                ${languages.map(lang => `
+                                    <label class="flex items-center space-x-2 text-xs text-slate-700 cursor-pointer bg-white p-2 rounded-lg border border-slate-200 hover:border-navy-400">
+                                        <input type="radio" name="lang-mine" value="${lang}" onchange="loveLanguagesData.mine = this.value" class="text-navy-700 focus:ring-navy-600">
+                                        <span>${lang}</span>
+                                    </label>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectOption(sectionId, questionId, score) {
+            userAnswers[questionId] = score;
+
+            // Reset visual states
+            [0, 1, 2].forEach(val => {
+                const btn = document.getElementById(`btn-q${questionId}-${val}`);
+                if (btn) {
+                    btn.className = `option-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 bg-white text-slate-700 hover:border-slate-400 transition-all`;
+                }
+            });
+
+            // Highlight choice
+            const activeBtn = document.getElementById(`btn-q${questionId}-${score}`);
+            if (activeBtn) {
+                if (score === 2) {
+                    activeBtn.className = `option-btn px-3.5 py-1.5 text-xs font-bold rounded-lg border-2 border-emerald-500 bg-emerald-50 text-emerald-800 shadow-sm`;
+                } else if (score === 1) {
+                    activeBtn.className = `option-btn px-3.5 py-1.5 text-xs font-bold rounded-lg border-2 border-amber-500 bg-amber-50 text-amber-800 shadow-sm`;
+                } else {
+                    activeBtn.className = `option-btn px-3.5 py-1.5 text-xs font-bold rounded-lg border-2 border-rose-500 bg-rose-50 text-rose-800 shadow-sm`;
+                }
+            }
+
+            updateScores();
+        }
+
+        function updateScores() {
+            let totalObtained = 0;
+            const totalMax = 194;
+            const totalAnsweredCount = Object.keys(userAnswers).length;
+            const sectionScores = {};
+
+            surveyData.forEach(section => {
+                let sectionSum = 0;
+                section.questions.forEach(q => {
+                    if (userAnswers[q.id] !== undefined) {
+                        sectionSum += userAnswers[q.id];
+                    }
+                });
+
+                sectionScores[section.id] = sectionSum;
+                totalObtained += sectionSum;
+
+                const sectionScoreEl = document.getElementById(`section-score-${section.id}`);
+                if (sectionScoreEl) {
+                    sectionScoreEl.innerText = `${sectionSum} / ${section.maxScore}`;
+                }
+            });
+
+            // Update Progress Header
+            const percentAnswered = Math.round((totalAnsweredCount / 97) * 100);
+            document.getElementById('header-progress-text').innerText = `${totalAnsweredCount} of 97 Answered (${percentAnswered}%)`;
+            document.getElementById('header-progress-bar').style.width = `${percentAnswered}%`;
+
+            // Cumulative Total
+            const totalPercent = Math.round((totalObtained / totalMax) * 100);
+            document.getElementById('total-score-num').innerHTML = `${totalObtained} <span class="text-xl font-normal text-slate-300">/ ${totalMax}</span>`;
+            document.getElementById('total-percentage-text').innerText = `Cumulative Overall Percentage: ${totalPercent}%`;
+
+            // Dynamic status badge
+            const totalBadge = document.getElementById('total-badge');
+            if (totalPercent >= 80) {
+                totalBadge.className = 'inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-500 text-white shadow';
+                totalBadge.innerText = 'Overall Strong Area (≥80%)';
+            } else if (totalPercent >= 60) {
+                totalBadge.className = 'inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-white shadow';
+                totalBadge.innerText = 'Overall Growing Area (60–79%)';
+            } else {
+                totalBadge.className = 'inline-block px-3 py-1 rounded-full text-xs font-bold bg-rose-500 text-white shadow';
+                totalBadge.innerText = 'Overall Area of Attention (<60%)';
+            }
+
+            renderScoresTable(sectionScores);
+            renderActionPlanForms(sectionScores);
+        }
+
+        function renderScoresTable(sectionScores) {
+            const tbody = document.getElementById('scores-table-body');
+            tbody.innerHTML = '';
+
+            surveyData.forEach(section => {
+                const score = sectionScores[section.id] || 0;
+                const percentage = Math.round((score / section.maxScore) * 100);
+
+                let badgeHtml = '';
+                if (percentage >= 80) {
+                    badgeHtml = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800"><i class="fa-solid fa-circle text-[8px] mr-1.5 text-emerald-500"></i> Strong</span>`;
+                } else if (percentage >= 60) {
+                    badgeHtml = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800"><i class="fa-solid fa-circle text-[8px] mr-1.5 text-amber-500"></i> Growing</span>`;
+                } else {
+                    badgeHtml = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800"><i class="fa-solid fa-triangle-exclamation text-[8px] mr-1.5 text-rose-500"></i> Attention</span>`;
+                }
+
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-slate-50 transition-colors';
+                row.innerHTML = `
+                    <td class="py-3 px-4 font-medium text-navy-950">${section.title}</td>
+                    <td class="py-3 px-4 text-center font-bold text-slate-800">${score}</td>
+                    <td class="py-3 px-4 text-center text-slate-500">${section.maxScore}</td>
+                    <td class="py-3 px-4 text-center font-extrabold ${percentage >= 80 ? 'text-emerald-600' : percentage >= 60 ? 'text-amber-600' : 'text-rose-600'}">${percentage}%</td>
+                    <td class="py-3 px-4 text-center">${badgeHtml}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function renderActionPlanForms(sectionScores) {
+            const container = document.getElementById('action-plan-container');
+            container.innerHTML = '';
+
+            const lowScoreSections = surveyData.filter(s => {
+                const score = sectionScores[s.id] || 0;
+                const pct = Math.round((score / s.maxScore) * 100);
+                return pct < 60;
+            });
+
+            if (lowScoreSections.length === 0) {
+                container.innerHTML = `
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-center space-y-3">
+                        <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-xl">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h4 class="font-bold text-emerald-900 text-base">Great Initial Assessment!</h4>
+                        <p class="text-xs text-emerald-700 max-w-lg mx-auto">
+                            All sections currently score at or above 60%. You can still select any area you wish to proactively elevate using preventative goals.
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            lowScoreSections.forEach(section => {
+                const score = sectionScores[section.id] || 0;
+                const pct = Math.round((score / section.maxScore) * 100);
+                const rec = areaRecommendations[section.id];
+
+                const card = document.createElement('div');
+                card.className = 'bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-6 shadow-sm';
+                card.innerHTML = `
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center">
+                                <i class="fa-solid ${rec ? rec.icon : 'fa-list-check'}"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-base">${section.title}</h4>
+                                <span class="text-xs text-rose-600 font-semibold">Priority Focus Area</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-slate-500 uppercase block font-semibold">Current Score</span>
+                            <span class="text-xl font-extrabold text-rose-600">${pct}% (${score} / ${section.maxScore})</span>
+                        </div>
+                    </div>
+
+                    <!-- SMART Goal Formulation -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-navy-900 mb-1">
+                                SMART Goal (Specific, Measurable, Achievable, Relevant, Time-bound):
+                            </label>
+                            <textarea rows="3" placeholder="e.g., Deepen our communication over the next 30 days by having one 30-minute undistracted conversation each week." class="w-full bg-white border border-slate-300 rounded-xl p-3 text-xs text-slate-800 focus:outline-none focus:border-navy-600"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-navy-900 mb-1">
+                                Root Cause: What is hindering growth in this area?
+                            </label>
+                            <textarea rows="3" placeholder="e.g., Extended work schedules, past fears, hesitancy in sharing vulnerable emotions..." class="w-full bg-white border border-slate-300 rounded-xl p-3 text-xs text-slate-800 focus:outline-none focus:border-navy-600"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Concrete Action Steps -->
+                    <div>
+                        <label class="block text-xs font-bold text-navy-900 mb-2">Specific Action Steps (Who, What, When):</label>
+                        <div class="space-y-3">
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 items-center bg-white p-2.5 rounded-xl border border-slate-200">
+                                <span class="sm:col-span-1 text-xs font-bold text-navy-800 text-center">1</span>
+                                <input type="text" placeholder="Concrete action..." class="sm:col-span-6 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 text-xs">
+                                <input type="text" placeholder="Responsible" class="sm:col-span-3 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 text-xs">
+                                <input type="date" class="sm:col-span-2 bg-slate-50 border border-slate-200 rounded-lg px-2 py-1.5 text-xs">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 items-center bg-white p-2.5 rounded-xl border border-slate-200">
+                                <span class="sm:col-span-1 text-xs font-bold text-navy-800 text-center">2</span>
+                                <input type="text" placeholder="Concrete action..." class="sm:col-span-6 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 text-xs">
+                                <input type="text" placeholder="Responsible" class="sm:col-span-3 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 text-xs">
+                                <input type="date" class="sm:col-span-2 bg-slate-50 border border-slate-200 rounded-lg px-2 py-1.5 text-xs">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- External Support & Prayer -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                        <div>
+                            <label class="block text-xs font-bold text-navy-900 mb-1">External Support Needed:</label>
+                            <input type="text" placeholder="e.g., Pastor, couple mentor, counselor, targeted book..." class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-navy-900 mb-1">Joint Prayer Commitment:</label>
+                            <input type="text" placeholder="What specific petition will we pray for together?" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs">
+                        </div>
+                    </div>
+
+                    <!-- Review Date & Signatures -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-200">
+                        <div>
+                            <label class="block text-xs font-bold text-navy-900 mb-1">Review Date (e.g., 30 days):</label>
+                            <input type="date" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-1.5 text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-navy-900 mb-1">Signature / Partner 1:</label>
+                            <input type="text" placeholder="Full name" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-1.5 text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-navy-900 mb-1">Signature / Partner 2:</label>
+                            <input type="text" placeholder="Full name" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-1.5 text-xs">
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function renderRecommendationsGrid() {
+            const container = document.getElementById('recommendations-grid');
+            container.innerHTML = '';
+
+            Object.keys(areaRecommendations).forEach(key => {
+                const rec = areaRecommendations[key];
+                const card = document.createElement('div');
+                card.className = 'bg-navy-950/80 border border-navy-800 rounded-xl p-5 hover:border-gold-500/50 transition-all';
+                card.innerHTML = `
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-8 h-8 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center text-sm">
+                            <i class="fa-solid ${rec.icon}"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-100 text-sm">${key}. ${rec.title}</h4>
+                    </div>
+                    <ul class="space-y-2 text-xs text-navy-200">
+                        ${rec.tips.map(tip => `
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-angle-right text-gold-400 mt-0.5 mr-2 shrink-0 text-[10px]"></i>
+                                <span>${tip}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Scroll to results cleanly
+        function scrollToResults() {
+            const resultsEl = document.getElementById('results-section');
+            if (resultsEl) {
+                resultsEl.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
